@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Zoho CRM Widget - Currency Exchange</title>
+   <style>
+      body {
+         font-family: Arial, sans-serif;
+         background-color: #f4f4f4;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
+         margin: 0;
+      }
+
+      .widget-container {
+         background-color: #fff;
+         padding: 20px;
+         border-radius: 8px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+         text-align: center;
+         width: 300px;
+      }
+
+      .widget-container p {
+         font-size: 18px;
+         margin: 10px 0;
+      }
+
+      .button-container {
+         display: flex;
+         justify-content: center;
+         margin-top: 20px;
+      }
+
+      #saveButton {
+         display: none;
+         background-color: #4CAF50;
+         color: white;
+         padding: 10px 20px;
+         border: none;
+         cursor: pointer;
+         border-radius: 5px;
+         font-size: 16px;
+      }
+
+      #saveButton:hover {
+         background-color: #45a049;
+      }
+
+      .widget-footer {
+         margin-top: 20px;
+         font-size: 12px;
+         color: #808080;
+         text-align: center;
+      }
+   </style>
+
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+
+   <div class="widget-container">
+      <p>Курс НБУ: <span id="nbuRate"></span></p>
+      <p>Курс в Угоді: <span id="dealRate"></span></p>
+      <p>Різниця: <span id="difference"></span>%</p>
+      <div class="button-container">
+         <button id="saveButton" onclick="saveRate()">Записати курс в Угоду</button>
+      </div>
+      <div class="widget-footer">
+         <p>Курс НБУ оновлюється щодня о 00:00. Останнє оновлення курсу: <span id="lastUpdate"></span></p>
+      </div>
+   </div>
+
+   <script src="js/lib/ZohoEmbededAppSDK.min.js"></script>
+   <script src="js/widget.js"></script>
+
+</body>
+
+</html>
